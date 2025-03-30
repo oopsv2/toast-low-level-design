@@ -1,0 +1,17 @@
+<div class="container" (click)="openToast($event)">
+  <button type="button" class="btn-success">Success</button>
+  <button type="button" class="btn-error">Error</button>
+</div>
+
+<div class="area">
+  <ng-container *ngFor="let toast of toastQueue; let i = index">
+    <app-toast
+      [style.marginTop.px]="10 * (i + 1)"
+      [class.animation]="toast.props.animation"
+      [ngClass]="toast.props.position"
+      *ngIf="toast.show"
+      [props]="toast.props"
+      (closer)="closeToast($event, i)"
+    ></app-toast>
+  </ng-container>
+</div>

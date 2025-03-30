@@ -1,0 +1,5 @@
+<div class="container" [ngClass]="props.type === 1 ? 'success' : 'error'">
+  <i class="material-icons">{{props.type === 1 ? 'info' : 'error'}}</i>
+  <span>{{ props.text }}</span>
+  <i class="material-icons" (click)="closeToast()">close</i>
+</div>

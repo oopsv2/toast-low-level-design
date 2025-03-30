@@ -1,0 +1,44 @@
+.container {
+  min-width: 300px;
+  width: fit-content;
+  height: 50px;
+  box-shadow: 0 4px 8px #0000017f;
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 8px;
+  color: white;
+  gap: 8px;
+  z-index: 2;
+  margin-bottom: 10px;
+  animation: pop 400ms;
+
+  i {
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  span {
+    width: calc(100% - 48px);
+  }
+
+  &.success {
+    background-color: rgb(67, 163, 67);
+  }
+
+  &.error {
+    background-color: #ff000086;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
